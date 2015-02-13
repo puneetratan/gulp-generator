@@ -13,7 +13,7 @@ var path = require('path');
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 
-app.use(express.static(__dirname + "/"));
+app.use(express.static(__dirname + "/high-charts"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -205,7 +205,7 @@ router.route('/data/dashboard-grid-items-data.json')
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /conferenceApp
 app.use('/high-charts', router);
-// app.use('/', router);
+app.use('/', router);
 
 // START THE SERVER
 // =============================================================================
